@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
@@ -26,11 +27,12 @@ export async function GET(request: Request) {
           {title}
         </h1>
         <div tw="flex bg-gray-900 p-16">
-          <img
-            src="https://jonmeyers.io/profile.png"
+          <Image
+            src="/profile.png"
             width="120"
             height="120"
             tw="rounded-full"
+            alt="Logo of cartoon version of Jon Meyers"
           />
           <div tw="ml-8 text-4xl flex flex-col justify-center">
             <span tw="block">Jon Meyers</span>
