@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
@@ -27,7 +26,7 @@ export async function GET(request: Request) {
           {title}
         </h1>
         <div tw="flex bg-gray-900 p-16">
-          <Image
+          <img
             src="/profile.png"
             width="120"
             height="120"
