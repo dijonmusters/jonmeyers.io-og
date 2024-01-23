@@ -3,8 +3,8 @@ import { ImageResponse } from "next/og";
 export const runtime = "edge";
 
 export async function GET(request: Request) {
-  const searchParams = new URL(request.url).searchParams;
-  const title = searchParams.get("title");
+  const url = new URL(request.url);
+  const title = url.searchParams.get("title");
 
   const boldFont = await fetch(
     new URL("./Geist-Bold.otf", import.meta.url)
@@ -27,7 +27,7 @@ export async function GET(request: Request) {
         </h1>
         <div tw="flex bg-gray-900 p-16">
           <img
-            src="/profile.png"
+            src={`${url.origin}/profile.png`}
             width="120"
             height="120"
             tw="rounded-full"
